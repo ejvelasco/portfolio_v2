@@ -31,7 +31,7 @@ gulp.task("pug-2", function(){
 });
 
 gulp.task('sass', function () {
-  return gulp.src('./public/sass/*.sass')
+  return gulp.src('./public/sass/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('./public/build/'))
     .pipe(livereload());
@@ -42,7 +42,7 @@ gulp.task("watch", function() {
       gulp.watch("./views/*.pug", ["pug-1"]);
       gulp.watch("./views/partials/*.pug", ["pug-2"]);
       gulp.watch("./public/js/*.js", ["js"]);
-      gulp.watch("./public/sass/*.sass", ["sass"]);
+      gulp.watch("./public/sass/*.scss", ["sass"]);
 });
 
 gulp.task("default", ["js", "sass", "watch", "pug-1", "pug-2"]);
