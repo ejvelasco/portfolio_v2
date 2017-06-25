@@ -33,7 +33,8 @@ gulp.task("pug-2", function(){
 gulp.task('sass', function () {
   return gulp.src('./public/sass/*.sass')
     .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('./public/build/'));
+    .pipe(gulp.dest('./public/build/'))
+    .pipe(livereload());
 });
 
 gulp.task("watch", function() {
