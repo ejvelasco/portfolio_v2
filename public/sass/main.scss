@@ -1,4 +1,5 @@
 @import url('http://fonts.googleapis.com/css?family=Raleway:300,500,700');
+@import url('http://fonts.googleapis.com/css?family=La+Belle+Aurore');
 @import url('http://weloveiconfonts.com/api/?family=entypo');
 @import url('/bootstrap/css/bootstrap.css');
 //social icons
@@ -18,9 +19,9 @@
   font-size: 2.1em;
   color: white;
   text-decoration: none !important;
-  transition: .3s ease;
+  transition: .4s ease;
   &:hover {
-    color: rgba(255, 255, 255, .5)  
+    color: rgba(255, 255, 255, .6)  
   }
 }
 //arrow
@@ -52,8 +53,7 @@
 }
 @mixin elegant-snippet { 
   font-family: Raleway;
-  letter-spacing: 3px;
-  // font-weight: lighter;
+  letter-spacing: 2px;
   color: white;
 }
 @mixin shade($x, $y, $z, $o) {
@@ -75,7 +75,6 @@ body {
   background-color: #333;
   color: #fff;
   text-align: center;
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
 }
 .trans{
   letter-spacing: -30px !important;
@@ -83,6 +82,9 @@ body {
 }
 .site-wrapper {
   display: table;
+  background: url('/img/apple.jpg');
+  background-size: cover;
+  background-position: center;
   width: 100%;
   height: 100%;
   min-height: 100%;
@@ -96,7 +98,13 @@ body {
   margin-left: auto;
 }
 .cover-heading {
-  @include elegant(4em);
+  font-family: "La Belle Aurore", cursive;
+  font-size: 7em;
+  line-height: 60px;
+  padding-bottom: 0 !important;
+  margin: 0 !important;
+  font-weight: lighter;
+  // background-color: red;
   transition: all .5s ease-in-out;
 }
 .mastfoot{
@@ -114,17 +122,25 @@ body {
 .masthead-brand {
   margin-top: 10px;
   margin-bottom: 10px;
+  font-family: "La Belle Aurore", cursive;
+  font-size: 2em;
+}
+.masthead-nav {
+  display: block;
+  position: relative;
+  right: 0 !important;
 }
 .masthead-nav > li {
     display: inline-block;
 }
 .masthead-nav li a {
-  @include elegant(1em);
-  transition: .3s ease;
+  @include elegant(1.1em);
+  font-weight: normal !important;
+  transition: .4s ease;
   cursor: pointer;
   &:hover {
     background-color: transparent !important;
-    color: rgba(255, 255, 255, .5);  
+    color: rgba(255, 255, 255, .6);  
   }
   &:focus {
     background-color: transparent !important;
@@ -160,7 +176,8 @@ body {
 }
 @media (max-width: 768px) {
   .cover-heading {
-    @include elegant(3.1em);
+    font-family: "La Belle Aurore", cursive;
+    font-size: 3.5em;
   } 
 }
 @media (min-height: 750px) {
