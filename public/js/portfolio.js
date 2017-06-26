@@ -5,19 +5,21 @@ require('bootstrap');
 
 let last  = 'home';
 let next = '';
-let append;
-let scroll;
-let child, title, desc, first;
 let top = 0;
 let idx = 0;
+let append;
+let scroll;
+let child; 
+let title;
+let subtitle;
+let img;
+let first;
 let marginFirst;
 $(".masthead-nav li a").on("click", event => {
 	next = event.currentTarget.innerHTML.toLowerCase();
 	if (next === last) {
 		return;
 	}
-	
-	console.log(next);
 	if (next === 'projects') {
 			scroll = setInterval(() => {
 				top -= 1;
@@ -31,12 +33,13 @@ $(".masthead-nav li a").on("click", event => {
 				marginFirst = Number(marginFirst.substring(0, marginFirst.length - 2));
 				child = $('#projects').children()[idx];
 				title = $(child).children()[0].innerHTML;
-				desc = $(child).children()[1].innerHTML;
-				element = `<div class='project'>
+				subtitle = $(child).children()[1].innerHTML;
+				img = $(child).css('background-image');
+				img = img.substring(5, img.length - 2);
+				element = `<div class='project' style='background-image: url(${img})'>
 				<p class='project-title'> ${title} </p>
-				<p class='project-desc'> ${desc} </p>
+				<p class='project-subtitle'> ${subtitle} </p>
 				</div>`
-				// $(child).remove();
 				$('#projects').append(element);
 				idx++;
 			}, 2000);
@@ -51,46 +54,51 @@ $(".masthead-nav li a").on("click", event => {
 });
 
 const projects = [
+	
 	{
-		title: "Project 1", 
-		desc: "Desc 1"
-	}, 
-	{
-		title: "Project 2", 
-		desc: "Desc 2"
+		title: "Hummingbird",
+		subtitle: "Enriching the classroom environment.",
+		img: "/img/hummingbird.jpg",
+		url:"https://github.com/velascoDev/hummingbird-dashboard"
 	},
 	{
-		title: "Project 3", 
-		desc: "Desc 3"
-	}, 
-	{
-		title: "Project 4", 
-		desc: "Desc 4"
+		title: "EasyTopo",
+		subtitle: "Brain imaging simplified.",
+		img: "/img/EasyTopo.jpeg",
+		url: "https://github.com/velascoDev/EasyTopo"
 	},
 	{
-		title: "Project 5", 
-		desc: "Desc 5"
-	}, 
-	{
-		title: "Project 6", 
-		desc: "Desc 6"
+		title: "ESplay",
+		subtitle: "A sleek ES6 playground.",
+		img: "/img/esplay.jpeg",
+		url: "https://github.com/velascoDev/ESplay"
 	},
 	{
-		title: "Project 7", 
-		desc: "Desc 7"
-	}, 
-	{
-		title: "Project 8", 
-		desc: "Desc 8"
-	}
+		title: "SharedFi Portal",
+		subtitle: "Next-gen targeted advertising.",
+		img: "/img/pi.jpg",
+		url: "http://sharedfi.w11.wh-2.com/Master/index.html"
 
+	},
+	{
+		title: "Portfolio",
+		subtitle: "Like it? Check out the code.",
+		img: "/img/portfolio.jpeg",
+		url: "https://github.com/velascoDev/portfolio_v2"
+	},
+	{
+		title: "cBioPortal",
+		subtitle: "Cancer genomics initiative at Memorial Sloan Kettering (Internship).",
+		img: "/img/zuckerman.jpg",
+		url: "https://github.com/velascoDev/cbioportal"
+	}	
 ];
 
 let element;
 for (const project of projects) {
-	element = `<div class='project'>
+	element = `<div class='project' style='background-image: url(${project.img})'>
 	<p class='project-title'> ${project.title} </p>
-	<p class='project-desc'> ${project.desc} </p>
+	<p class='project-subtitle'> ${project.subtitle} </p>
 	</div>`
 	$('#projects').append(element);
 }

@@ -12648,22 +12648,21 @@ require('bootstrap');
 
 var last = 'home';
 var next = '';
-var append = void 0;
-var scroll = void 0;
-var child = void 0,
-    title = void 0,
-    desc = void 0,
-    first = void 0;
 var top = 0;
 var idx = 0;
+var append = void 0;
+var scroll = void 0;
+var child = void 0;
+var title = void 0;
+var subtitle = void 0;
+var img = void 0;
+var first = void 0;
 var marginFirst = void 0;
 $(".masthead-nav li a").on("click", function (event) {
 	next = event.currentTarget.innerHTML.toLowerCase();
 	if (next === last) {
 		return;
 	}
-
-	console.log(next);
 	if (next === 'projects') {
 		scroll = setInterval(function () {
 			top -= 1;
@@ -12677,9 +12676,10 @@ $(".masthead-nav li a").on("click", function (event) {
 			marginFirst = Number(marginFirst.substring(0, marginFirst.length - 2));
 			child = $('#projects').children()[idx];
 			title = $(child).children()[0].innerHTML;
-			desc = $(child).children()[1].innerHTML;
-			element = '<div class=\'project\'>\n\t\t\t\t<p class=\'project-title\'> ' + title + ' </p>\n\t\t\t\t<p class=\'project-desc\'> ' + desc + ' </p>\n\t\t\t\t</div>';
-			// $(child).remove();
+			subtitle = $(child).children()[1].innerHTML;
+			img = $(child).css('background-image');
+			img = img.substring(5, img.length - 2);
+			element = '<div class=\'project\' style=\'background-image: url(' + img + ')\'>\n\t\t\t\t<p class=\'project-title\'> ' + title + ' </p>\n\t\t\t\t<p class=\'project-subtitle\'> ' + subtitle + ' </p>\n\t\t\t\t</div>';
 			$('#projects').append(element);
 			idx++;
 		}, 2000);
@@ -12694,29 +12694,36 @@ $(".masthead-nav li a").on("click", function (event) {
 });
 
 var projects = [{
-	title: "Project 1",
-	desc: "Desc 1"
+	title: "Hummingbird",
+	subtitle: "Enriching the classroom environment.",
+	img: "/img/hummingbird.jpg",
+	url: "https://github.com/velascoDev/hummingbird-dashboard"
 }, {
-	title: "Project 2",
-	desc: "Desc 2"
+	title: "EasyTopo",
+	subtitle: "Brain imaging simplified.",
+	img: "/img/EasyTopo.jpeg",
+	url: "https://github.com/velascoDev/EasyTopo"
 }, {
-	title: "Project 3",
-	desc: "Desc 3"
+	title: "ESplay",
+	subtitle: "A sleek ES6 playground.",
+	img: "/img/esplay.jpeg",
+	url: "https://github.com/velascoDev/ESplay"
 }, {
-	title: "Project 4",
-	desc: "Desc 4"
+	title: "SharedFi Portal",
+	subtitle: "Next-gen targeted advertising.",
+	img: "/img/pi.jpg",
+	url: "http://sharedfi.w11.wh-2.com/Master/index.html"
+
 }, {
-	title: "Project 5",
-	desc: "Desc 5"
+	title: "Portfolio",
+	subtitle: "Like it? Check out the code.",
+	img: "/img/portfolio.jpeg",
+	url: "https://github.com/velascoDev/portfolio_v2"
 }, {
-	title: "Project 6",
-	desc: "Desc 6"
-}, {
-	title: "Project 7",
-	desc: "Desc 7"
-}, {
-	title: "Project 8",
-	desc: "Desc 8"
+	title: "cBioPortal",
+	subtitle: "Cancer genomics initiative at Memorial Sloan Kettering (Internship).",
+	img: "/img/zuckerman.jpg",
+	url: "https://github.com/velascoDev/cbioportal"
 }];
 
 var element = void 0;
@@ -12728,7 +12735,7 @@ try {
 	for (var _iterator = projects[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 		var project = _step.value;
 
-		element = '<div class=\'project\'>\n\t<p class=\'project-title\'> ' + project.title + ' </p>\n\t<p class=\'project-desc\'> ' + project.desc + ' </p>\n\t</div>';
+		element = '<div class=\'project\' style=\'background-image: url(' + project.img + ')\'>\n\t<p class=\'project-title\'> ' + project.title + ' </p>\n\t<p class=\'project-subtitle\'> ' + project.subtitle + ' </p>\n\t</div>';
 		$('#projects').append(element);
 	}
 } catch (err) {

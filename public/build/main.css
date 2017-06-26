@@ -67,11 +67,14 @@ body {
 .cover-heading {
   font-family: Raleway;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
   font-size: 4em;
   font-weight: lighter;
   color: white;
   transition: all .5s ease-in-out; }
+
+.mastfoot {
+  width: 100% !important; }
 
 .inner {
   padding-top: 30px;
@@ -81,8 +84,7 @@ body {
 
 .lead {
   font-family: Raleway;
-  letter-spacing: 4px;
-  font-weight: lighter;
+  letter-spacing: 3px;
   color: white; }
 
 .masthead-brand {
@@ -95,7 +97,7 @@ body {
 .masthead-nav li a {
   font-family: Raleway;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
   font-size: 1em;
   font-weight: lighter;
   color: white;
@@ -118,27 +120,48 @@ body {
   padding-bottom: 10px; }
 
 .project {
-  -moz-box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
-  -webkit-box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
-  box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
   background-color: red;
-  height: 120px;
+  height: 150px;
   padding: 20px;
   margin-bottom: 30px;
-  border-radius: 5px; }
+  border-radius: 5px;
+  background-size: cover !important; }
 
-.project-title, .project-desc {
+.project-title, .project-subtitle {
   margin: 0 !important;
   text-align: left; }
+
+.project-title {
+  font-family: Raleway;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.8em;
+  font-weight: lighter;
+  color: white; }
+
+.project-subtitle {
+  font-family: Raleway;
+  letter-spacing: 3px;
+  color: white; }
 
 @media (max-width: 768px) {
   .cover-heading {
     font-family: Raleway;
     text-transform: uppercase;
-    letter-spacing: 7px;
+    letter-spacing: 5px;
     font-size: 3.1em;
     font-weight: lighter;
     color: white; } }
+
+@media (min-height: 750px) {
+  #projects {
+    height: 600px; }
+  .projects {
+    height: 150px !important; } }
+
+@media (min-width: 1000px) {
+  .cover-container {
+    width: 70% !important; } }
 
 @media (min-width: 768px) {
   .masthead-brand {

@@ -45,15 +45,15 @@
 @mixin elegant($size) { 
   font-family: Raleway;
   text-transform: uppercase;
-  letter-spacing: 7px;
+  letter-spacing: 5px;
   font-size: $size;
   font-weight: lighter;
   color: white;
 }
 @mixin elegant-snippet { 
   font-family: Raleway;
-  letter-spacing: 4px;
-  font-weight: lighter;
+  letter-spacing: 3px;
+  // font-weight: lighter;
   color: white;
 }
 @mixin shade($x, $y, $z, $o) {
@@ -99,6 +99,9 @@ body {
   @include elegant(4em);
   transition: all .5s ease-in-out;
 }
+.mastfoot{
+  width: 100% !important;
+}
 .inner {
   padding-top: 30px;
   padding-left: 30px;
@@ -138,21 +141,40 @@ body {
   padding-bottom: 10px;
 }
 .project {
-  @include shade(0, 0, 30px, .7);
   background-color: red;
-  height: 120px;
+  height: 150px;
   padding: 20px;
   margin-bottom: 30px;
   border-radius: 5px;
+  background-size: cover !important;
 }
-.project-title,.project-desc{
+.project-title,.project-subtitle{
   margin: 0 !important;
   text-align: left;
+}
+.project-title {
+  @include elegant(1.8em);
+}
+.project-subtitle {
+  @include elegant-snippet;
 }
 @media (max-width: 768px) {
   .cover-heading {
     @include elegant(3.1em);
   } 
+}
+@media (min-height: 750px) {
+  #projects {
+    height: 600px;
+  }
+  .projects {
+    height: 150px !important;
+  }
+}
+@media (min-width: 1000px) {
+  .cover-container {
+    width: 70% !important;
+  }
 }
 @media (min-width: 768px) {
   .masthead-brand {
