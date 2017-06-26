@@ -56,6 +56,11 @@
   font-weight: lighter;
   color: white;
 }
+@mixin shade($x, $y, $z, $o) {
+  -moz-box-shadow:    inset $x $y $z rgba(1, 1, 1, $o);
+  -webkit-box-shadow: inset $x $y $z rgba(1, 1, 1, $o);
+  box-shadow:         inset $x $y $z rgba(1, 1, 1, $o);
+}
 //variables
 $font-stack: Helvetica, sans-serif;
 $primary-color: green;
@@ -71,6 +76,10 @@ body {
   color: #fff;
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.trans{
+  letter-spacing: -30px !important;
+  opacity: 0;
 }
 .site-wrapper {
   display: table;
@@ -88,6 +97,7 @@ body {
 }
 .cover-heading {
   @include elegant(4em);
+  transition: all .5s ease-in-out;
 }
 .inner {
   padding-top: 30px;
@@ -116,6 +126,28 @@ body {
   &:focus {
     background-color: transparent !important;
   }
+}
+#projects, #about, #contact{
+  display: none;
+}
+#projects {
+  background-color: transparent;
+  height: 500px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 10px;
+}
+.project {
+  @include shade(0, 0, 30px, .7);
+  background-color: red;
+  height: 120px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px;
+}
+.project-title,.project-desc{
+  margin: 0 !important;
+  text-align: left;
 }
 @media (max-width: 768px) {
   .cover-heading {

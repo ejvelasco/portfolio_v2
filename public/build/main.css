@@ -46,6 +46,10 @@ body {
   text-align: center;
   text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); }
 
+.trans {
+  letter-spacing: -30px !important;
+  opacity: 0; }
+
 .site-wrapper {
   display: table;
   width: 100%;
@@ -66,7 +70,8 @@ body {
   letter-spacing: 7px;
   font-size: 4em;
   font-weight: lighter;
-  color: white; }
+  color: white;
+  transition: all .5s ease-in-out; }
 
 .inner {
   padding-top: 30px;
@@ -101,6 +106,30 @@ body {
     color: rgba(255, 255, 255, 0.5); }
   .masthead-nav li a:focus {
     background-color: transparent !important; }
+
+#projects, #about, #contact {
+  display: none; }
+
+#projects {
+  background-color: transparent;
+  height: 500px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+.project {
+  -moz-box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
+  -webkit-box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
+  box-shadow: inset 0 0 30px rgba(1, 1, 1, 0.7);
+  background-color: red;
+  height: 120px;
+  padding: 20px;
+  margin-bottom: 30px;
+  border-radius: 5px; }
+
+.project-title, .project-desc {
+  margin: 0 !important;
+  text-align: left; }
 
 @media (max-width: 768px) {
   .cover-heading {

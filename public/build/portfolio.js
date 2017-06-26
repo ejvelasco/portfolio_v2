@@ -12643,9 +12643,108 @@ return jQuery;
 (function (global){
 'use strict';
 
-global.jQuery = require('jquery');
+var $ = global.jQuery = require('jquery');
 require('bootstrap');
-console.log("hello world!");
+
+var last = 'home';
+var next = '';
+var append = void 0;
+var scroll = void 0;
+var child = void 0,
+    title = void 0,
+    desc = void 0,
+    first = void 0;
+var top = 0;
+var idx = 0;
+var marginFirst = void 0;
+$(".masthead-nav li a").on("click", function (event) {
+	next = event.currentTarget.innerHTML.toLowerCase();
+	if (next === last) {
+		return;
+	}
+
+	console.log(next);
+	if (next === 'projects') {
+		scroll = setInterval(function () {
+			top -= 1;
+			child = $('#projects').children()[0];
+			$(child).css('margin-top', top);
+		}, 30);
+		append = setInterval(function () {
+			idx = idx % projects.length;
+			first = $('#projects').children()[0];
+			marginFirst = $(first).css('margin-top');
+			marginFirst = Number(marginFirst.substring(0, marginFirst.length - 2));
+			child = $('#projects').children()[idx];
+			title = $(child).children()[0].innerHTML;
+			desc = $(child).children()[1].innerHTML;
+			element = '<div class=\'project\'>\n\t\t\t\t<p class=\'project-title\'> ' + title + ' </p>\n\t\t\t\t<p class=\'project-desc\'> ' + desc + ' </p>\n\t\t\t\t</div>';
+			// $(child).remove();
+			$('#projects').append(element);
+			idx++;
+		}, 2000);
+	} else {
+		clearInterval(scroll);
+		clearInterval(append);
+	}
+	$('#' + last).fadeOut(500, function () {
+		$('#' + next).fadeIn(500);
+	});
+	last = next;
+});
+
+var projects = [{
+	title: "Project 1",
+	desc: "Desc 1"
+}, {
+	title: "Project 2",
+	desc: "Desc 2"
+}, {
+	title: "Project 3",
+	desc: "Desc 3"
+}, {
+	title: "Project 4",
+	desc: "Desc 4"
+}, {
+	title: "Project 5",
+	desc: "Desc 5"
+}, {
+	title: "Project 6",
+	desc: "Desc 6"
+}, {
+	title: "Project 7",
+	desc: "Desc 7"
+}, {
+	title: "Project 8",
+	desc: "Desc 8"
+}];
+
+var element = void 0;
+var _iteratorNormalCompletion = true;
+var _didIteratorError = false;
+var _iteratorError = undefined;
+
+try {
+	for (var _iterator = projects[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
+		var project = _step.value;
+
+		element = '<div class=\'project\'>\n\t<p class=\'project-title\'> ' + project.title + ' </p>\n\t<p class=\'project-desc\'> ' + project.desc + ' </p>\n\t</div>';
+		$('#projects').append(element);
+	}
+} catch (err) {
+	_didIteratorError = true;
+	_iteratorError = err;
+} finally {
+	try {
+		if (!_iteratorNormalCompletion && _iterator.return) {
+			_iterator.return();
+		}
+	} finally {
+		if (_didIteratorError) {
+			throw _iteratorError;
+		}
+	}
+}
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bootstrap":1,"jquery":14}]},{},[15]);
