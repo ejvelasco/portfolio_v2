@@ -114,11 +114,11 @@ const content = [
     	desc: "Welcome to my portfolio."
 	}, 
 	{
-    	title: "I AM A PROGRAMMER",
+    	title: "PROGRAMMER",
     	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
   	}, 
   	{
-    	title: "I AM A DESIGNER",
+    	title: "DESIGNER",
     	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
   	}, 
   	{
@@ -129,8 +129,8 @@ const content = [
 
 let i = 1;
 setInterval(() => {
-	$('.cover-heading').css('letter-spacing', '-40px').css('opacity', 0);
-	$('.lead').css('letter-spacing', '-10px').css('opacity', 0);
+	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
 	setTimeout(() => {
 		i = i % content.length;
 		$('.cover-heading').text(content[i].title);
@@ -139,7 +139,13 @@ setInterval(() => {
 		$('.lead').css('letter-spacing', '').css('opacity', '');
 		i++;
 	}, 700);
-}, 3000);
+}, 5000);
+
+let deg = 0;
+setInterval(() => {
+    $('.bg').css("filter", "hue-rotate("+deg+"deg)");
+    deg = deg + .4;
+}, 30);
 
 		
 

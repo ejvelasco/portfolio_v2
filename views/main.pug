@@ -10,16 +10,20 @@ html
 		meta(name='keywords', content='Eduardo Velasco, Eduardo, Velasco, portfolio, work, personal')
 		link(rel='stylesheet', href='/build/main.css', type='text/css')
 	body
-		.stars
-			#stars
-			#stars2
-			#stars3
+		.bg
 		.site-wrapper
 			.site-wrapper-inner
 				.cover-container
 					.masthead.clearfix
 						.inner
-							h3.masthead-brand E | V
+							.masthead-brand 
+								ul.social-links
+									li 
+										a(class="entypo-twitter icon" href="https://twitter.com/velascoDev" target="blank")
+									li 
+										a(class="entypo-github icon" href="https://github.com/velascoDev" target="blank")
+									li 
+										a(class="entypo-linkedin icon" href="https://www.linkedin.com/in/ejvelasco/" target="blank")
 							nav
 								ul.nav.masthead-nav
 									li
@@ -40,13 +44,7 @@ html
 					#home.inner.cover
 						span.cover-heading Eduardo Velasco
 						p.lead Welcome to my portfolio.
-				.mastfoot
+				//- .mastfoot
 					.inner
-						ul.social-links
-							li 
-								a(class="entypo-twitter icon" href="https://twitter.com/velascoDev" target="blank")
-							li 
-								a(class="entypo-github icon" href="https://github.com/velascoDev" target="blank")
-							li 
-								a(class="entypo-linkedin icon" href="https://www.linkedin.com/in/ejvelasco/" target="blank")
+						
 		script(src="/build/portfolio.js" type="text/javascript")

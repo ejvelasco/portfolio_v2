@@ -12762,10 +12762,10 @@ var content = [{
 	title: "EDUARDO VELASCO",
 	desc: "Welcome to my portfolio."
 }, {
-	title: "I AM A PROGRAMMER",
+	title: "PROGRAMMER",
 	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
 }, {
-	title: "I AM A DESIGNER",
+	title: "DESIGNER",
 	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
 }, {
 	title: "SEIZE THE DAY",
@@ -12774,8 +12774,8 @@ var content = [{
 
 var i = 1;
 setInterval(function () {
-	$('.cover-heading').css('letter-spacing', '-40px').css('opacity', 0);
-	$('.lead').css('letter-spacing', '-10px').css('opacity', 0);
+	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
 	setTimeout(function () {
 		i = i % content.length;
 		$('.cover-heading').text(content[i].title);
@@ -12784,7 +12784,13 @@ setInterval(function () {
 		$('.lead').css('letter-spacing', '').css('opacity', '');
 		i++;
 	}, 700);
-}, 3000);
+}, 5000);
+
+var deg = 0;
+setInterval(function () {
+	$('.bg').css("filter", "hue-rotate(" + deg + "deg)");
+	deg = deg + .4;
+}, 30);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bootstrap":1,"jquery":14}]},{},[15]);
