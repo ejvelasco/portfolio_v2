@@ -95,6 +95,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -1;
+  filter: hue-rotate(180deg);
 }
 .site-wrapper-inner {
   display: table-cell;
@@ -145,7 +146,7 @@ body {
   font-weight: normal !important;
   transition: .4s ease;
   cursor: pointer;
-  line-height: 55px !important;
+  line-height: 58px !important;
   padding-top: 0 !important;
   padding-bottom: 0 !important;
   &:hover {

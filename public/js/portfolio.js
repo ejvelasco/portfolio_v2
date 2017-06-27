@@ -15,10 +15,43 @@ let subtitle;
 let img;
 let first;
 let marginFirst;
+let transition;
+
+let i = 1;
+transition = setInterval(() => {
+	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
+	setTimeout(() => {
+		i = i % content.length;
+		$('.cover-heading').text(content[i].title);
+		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+		$('.lead').text(content[i].desc);
+		$('.lead').css('letter-spacing', '').css('opacity', '');
+		i++;
+	}, 700);
+}, 5000);
+
 $(".masthead-nav li a").on("click", event => {
 	next = event.currentTarget.innerHTML.toLowerCase();
 	if (next === last) {
 		return;
+	}
+	if (next === 'home') {
+		let i = 1;
+		transition = setInterval(() => {
+			$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+			$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
+			setTimeout(() => {
+				i = i % content.length;
+				$('.cover-heading').text(content[i].title);
+				$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+				$('.lead').text(content[i].desc);
+				$('.lead').css('letter-spacing', '').css('opacity', '');
+				i++;
+			}, 700);
+		}, 5000);
+	} else {
+		clearInterval(transition);
 	}
 	if (next === 'projects') {
 			scroll = setInterval(() => {
@@ -127,25 +160,12 @@ const content = [
   	}
 ];
 
-let i = 1;
-setInterval(() => {
-	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
-	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
-	setTimeout(() => {
-		i = i % content.length;
-		$('.cover-heading').text(content[i].title);
-		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
-		$('.lead').text(content[i].desc);
-		$('.lead').css('letter-spacing', '').css('opacity', '');
-		i++;
-	}, 700);
-}, 5000);
 
-let deg = 0;
-setInterval(() => {
-    $('.bg').css("filter", "hue-rotate("+deg+"deg)");
-    deg = deg + .4;
-}, 30);
+// let deg = 0;
+// setInterval(() => {
+//     $('.bg').css("filter", "hue-rotate("+deg+"deg)");
+//     deg = deg + .4;
+// }, 30);
 
 		
 

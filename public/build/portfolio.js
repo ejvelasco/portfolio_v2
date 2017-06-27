@@ -12658,10 +12658,43 @@ var subtitle = void 0;
 var img = void 0;
 var first = void 0;
 var marginFirst = void 0;
+var transition = void 0;
+
+var i = 1;
+transition = setInterval(function () {
+	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
+	setTimeout(function () {
+		i = i % content.length;
+		$('.cover-heading').text(content[i].title);
+		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+		$('.lead').text(content[i].desc);
+		$('.lead').css('letter-spacing', '').css('opacity', '');
+		i++;
+	}, 700);
+}, 5000);
+
 $(".masthead-nav li a").on("click", function (event) {
 	next = event.currentTarget.innerHTML.toLowerCase();
 	if (next === last) {
 		return;
+	}
+	if (next === 'home') {
+		var _i = 1;
+		transition = setInterval(function () {
+			$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
+			$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
+			setTimeout(function () {
+				_i = _i % content.length;
+				$('.cover-heading').text(content[_i].title);
+				$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+				$('.lead').text(content[_i].desc);
+				$('.lead').css('letter-spacing', '').css('opacity', '');
+				_i++;
+			}, 700);
+		}, 5000);
+	} else {
+		clearInterval(transition);
 	}
 	if (next === 'projects') {
 		scroll = setInterval(function () {
@@ -12772,25 +12805,11 @@ var content = [{
 	desc: "What are you waiting for?\nGet out there and make your dreams happen."
 }];
 
-var i = 1;
-setInterval(function () {
-	$('.cover-heading').css('letter-spacing', '-15px').css('opacity', 0);
-	$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
-	setTimeout(function () {
-		i = i % content.length;
-		$('.cover-heading').text(content[i].title);
-		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
-		$('.lead').text(content[i].desc);
-		$('.lead').css('letter-spacing', '').css('opacity', '');
-		i++;
-	}, 700);
-}, 5000);
-
-var deg = 0;
-setInterval(function () {
-	$('.bg').css("filter", "hue-rotate(" + deg + "deg)");
-	deg = deg + .4;
-}, 30);
+// let deg = 0;
+// setInterval(() => {
+//     $('.bg').css("filter", "hue-rotate("+deg+"deg)");
+//     deg = deg + .4;
+// }, 30);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bootstrap":1,"jquery":14}]},{},[15]);
