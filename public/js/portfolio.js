@@ -49,6 +49,11 @@ $(".masthead-nav li a").on("click", event => {
 	}
 	$(`#${last}`).fadeOut(500, () => {
 		$(`#${next}`).fadeIn(500);	
+		if (next === 'projects') {
+			$('.stars').css('opacity', .4);
+		} else {
+			$('.stars').css('opacity', '');
+		}
 	});
 	last = next;
 });
@@ -103,8 +108,38 @@ for (const project of projects) {
 	$('#projects').append(element);
 }
 
+const content = [
+	{
+    	title: "EDUARDO VELASCO",
+    	desc: "Welcome to my portfolio."
+	}, 
+	{
+    	title: "I AM A PROGRAMMER",
+    	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
+  	}, 
+  	{
+    	title: "I AM A DESIGNER",
+    	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
+  	}, 
+  	{
+    	title: "SEIZE THE DAY",
+    	desc: "What are you waiting for?\nGet out there and make your dreams happen."
+  	}
+];
 
-
+let i = 1;
+setInterval(() => {
+	$('.cover-heading').css('letter-spacing', '-40px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-10px').css('opacity', 0);
+	setTimeout(() => {
+		i = i % content.length;
+		$('.cover-heading').text(content[i].title);
+		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+		$('.lead').text(content[i].desc);
+		$('.lead').css('letter-spacing', '').css('opacity', '');
+		i++;
+	}, 700);
+}, 3000);
 
 		
 

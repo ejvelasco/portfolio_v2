@@ -1,7 +1,9 @@
 @import url('http://fonts.googleapis.com/css?family=Raleway:300,500,700');
+@import url('http://fonts.googleapis.com/css?family=Roboto:300,500,700');
 @import url('http://fonts.googleapis.com/css?family=La+Belle+Aurore');
 @import url('http://weloveiconfonts.com/api/?family=entypo');
 @import url('/bootstrap/css/bootstrap.css');
+// @import 'stars';
 //social icons
 [class*="entypo-"]:before {
   font-family: 'entypo', sans-serif;
@@ -21,7 +23,7 @@
   text-decoration: none !important;
   transition: .4s ease;
   &:hover {
-    color: rgba(255, 255, 255, .6)  
+    color: rgba(255, 255, 255, .6);  
   }
 }
 //arrow
@@ -48,7 +50,6 @@
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: $size;
-  font-weight: lighter;
   color: white;
 }
 @mixin elegant-snippet { 
@@ -98,14 +99,14 @@ body {
   margin-left: auto;
 }
 .cover-heading {
-  font-family: "La Belle Aurore", cursive;
-  font-size: 7em;
-  line-height: 60px;
+  font-family: "Raleway";
+  font-size: 4.5em;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  line-height: 80px;
   padding-bottom: 0 !important;
   margin: 0 !important;
-  font-weight: lighter;
-  // background-color: red;
-  transition: all .5s ease-in-out;
+  transition: all .5s ease-out;
 }
 .mastfoot{
   width: 100% !important;
@@ -118,6 +119,7 @@ body {
 }
 .lead {
   @include elegant-snippet;
+  transition: all .5s ease-out;
 }
 .masthead-brand {
   margin-top: 10px;
@@ -128,7 +130,6 @@ body {
 .masthead-nav {
   display: block;
   position: relative;
-  right: 0 !important;
 }
 .masthead-nav > li {
     display: inline-block;
@@ -176,7 +177,6 @@ body {
 }
 @media (max-width: 768px) {
   .cover-heading {
-    font-family: "La Belle Aurore", cursive;
     font-size: 3.5em;
   } 
 }

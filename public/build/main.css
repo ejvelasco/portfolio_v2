@@ -1,4 +1,5 @@
 @import url("http://fonts.googleapis.com/css?family=Raleway:300,500,700");
+@import url("http://fonts.googleapis.com/css?family=Roboto:300,500,700");
 @import url("http://fonts.googleapis.com/css?family=La+Belle+Aurore");
 @import url("http://weloveiconfonts.com/api/?family=entypo");
 @import url("/bootstrap/css/bootstrap.css");
@@ -68,13 +69,14 @@ body {
   margin-left: auto; }
 
 .cover-heading {
-  font-family: "La Belle Aurore", cursive;
-  font-size: 7em;
-  line-height: 60px;
+  font-family: "Raleway";
+  font-size: 4.5em;
+  text-transform: uppercase;
+  letter-spacing: 7px;
+  line-height: 80px;
   padding-bottom: 0 !important;
   margin: 0 !important;
-  font-weight: lighter;
-  transition: all .5s ease-in-out; }
+  transition: all .5s ease-out; }
 
 .mastfoot {
   width: 100% !important; }
@@ -88,7 +90,8 @@ body {
 .lead {
   font-family: Raleway;
   letter-spacing: 2px;
-  color: white; }
+  color: white;
+  transition: all .5s ease-out; }
 
 .masthead-brand {
   margin-top: 10px;
@@ -98,8 +101,7 @@ body {
 
 .masthead-nav {
   display: block;
-  position: relative;
-  right: 0 !important; }
+  position: relative; }
 
 .masthead-nav > li {
   display: inline-block; }
@@ -109,7 +111,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 1.1em;
-  font-weight: lighter;
   color: white;
   font-weight: normal !important;
   transition: .4s ease;
@@ -147,7 +148,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 5px;
   font-size: 1.8em;
-  font-weight: lighter;
   color: white; }
 
 .project-subtitle {
@@ -157,7 +157,6 @@ body {
 
 @media (max-width: 768px) {
   .cover-heading {
-    font-family: "La Belle Aurore", cursive;
     font-size: 3.5em; } }
 
 @media (min-height: 750px) {

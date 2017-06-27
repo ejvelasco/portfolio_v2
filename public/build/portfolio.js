@@ -12689,6 +12689,11 @@ $(".masthead-nav li a").on("click", function (event) {
 	}
 	$('#' + last).fadeOut(500, function () {
 		$('#' + next).fadeIn(500);
+		if (next === 'projects') {
+			$('.stars').css('opacity', .4);
+		} else {
+			$('.stars').css('opacity', '');
+		}
 	});
 	last = next;
 });
@@ -12752,6 +12757,34 @@ try {
 		}
 	}
 }
+
+var content = [{
+	title: "EDUARDO VELASCO",
+	desc: "Welcome to my portfolio."
+}, {
+	title: "I AM A PROGRAMMER",
+	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
+}, {
+	title: "I AM A DESIGNER",
+	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
+}, {
+	title: "SEIZE THE DAY",
+	desc: "What are you waiting for?\nGet out there and make your dreams happen."
+}];
+
+var i = 1;
+setInterval(function () {
+	$('.cover-heading').css('letter-spacing', '-40px').css('opacity', 0);
+	$('.lead').css('letter-spacing', '-10px').css('opacity', 0);
+	setTimeout(function () {
+		i = i % content.length;
+		$('.cover-heading').text(content[i].title);
+		$('.cover-heading').css('letter-spacing', '').css('opacity', '');
+		$('.lead').text(content[i].desc);
+		$('.lead').css('letter-spacing', '').css('opacity', '');
+		i++;
+	}, 700);
+}, 3000);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"bootstrap":1,"jquery":14}]},{},[15]);
