@@ -52,6 +52,14 @@ module.exports = ($) => {
 			$(child).css('margin-top',top);
 		};
 	}			
+	const openLink = (event) => {
+		const title = $(event.currentTarget).children()[0].innerHTML;
+		for (const project of projects) {
+			if (project.title === title.trim()) {
+				window.open(project.url, '_blank');
+			}
+		}
+	}
 	const append = (idx, n) => {
 		return () => {
 			idx  = idx % n;
@@ -67,6 +75,7 @@ module.exports = ($) => {
 			<p class='project-tech'> ${tech} </p>
 			</div>`;
 			$('#projects').append(element);
+			$('#projects :last-child').on('click', openLink);
 			idx++;	
 		};
 	}	
@@ -79,6 +88,7 @@ module.exports = ($) => {
 		</div>`;
 		$('#projects').append(element);
 	}
+	$('.project').on('click', openLink);
 	return {
 		scroll, 
 		append, 
