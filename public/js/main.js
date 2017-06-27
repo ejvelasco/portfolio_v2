@@ -41,7 +41,7 @@ const switchView = (event) => {
 	last = next;
 }
 
-$(".masthead-nav li a").on("click", switchView);
+$('.masthead-nav li a').on('click', switchView);
 
 		
 

@@ -1,22 +1,22 @@
-"use strict"; 
+'use strict'; 
 
 module.exports = ($) => {
 	const content = [
 		{
-	    	title: "EDUARDO VELASCO",
-	    	desc: "Welcome to my portfolio."
+	    	title: 'EDUARDO VELASCO',
+	    	desc: 'Welcome to my portfolio.'
 		}, 
 		{
-	    	title: "PROGRAMMER",
-	    	desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
+	    	title: 'PROGRAMMER',
+	    	desc: 'programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code.'
 	  	}, 
 	  	{
-	    	title: "DESIGNER",
-	    	desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
+	    	title: 'DESIGNER',
+	    	desc: 'designer n. \deˈzīner\ \nA person who stares at color codes for way too long.'
 	  	}, 
 	  	{
-	    	title: "SEIZE THE DAY",
-	    	desc: "What are you waiting for?\nGet out there and make your dreams happen."
+	    	title: 'SEIZE THE DAY',
+	    	desc: 'What are you waiting for?\nGet out there and make your dreams happen.'
 	  	}
 	];
 	const squeeze = (idx, n) => {

@@ -10254,21 +10254,21 @@ return jQuery;
 } );
 
 },{}],2:[function(require,module,exports){
-"use strict";
+'use strict';
 
 module.exports = function ($) {
 	var content = [{
-		title: "EDUARDO VELASCO",
-		desc: "Welcome to my portfolio."
+		title: 'EDUARDO VELASCO',
+		desc: 'Welcome to my portfolio.'
 	}, {
-		title: "PROGRAMMER",
-		desc: "programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code."
+		title: 'PROGRAMMER',
+		desc: 'programmer n. \prō-gram-mer\ \nAn organism capable of turning caffeine into code.'
 	}, {
-		title: "DESIGNER",
-		desc: "designer n. \deˈzīner\ \nA person who stares at color codes for way too long."
+		title: 'DESIGNER',
+		desc: 'designer n. \deˈzīner\ \nA person who stares at color codes for way too long.'
 	}, {
-		title: "SEIZE THE DAY",
-		desc: "What are you waiting for?\nGet out there and make your dreams happen."
+		title: 'SEIZE THE DAY',
+		desc: 'What are you waiting for?\nGet out there and make your dreams happen.'
 	}];
 	var squeeze = function squeeze(idx, n) {
 		return function () {
@@ -10339,44 +10339,44 @@ var switchView = function switchView(event) {
 	last = next;
 };
 
-$(".masthead-nav li a").on("click", switchView);
+$('.masthead-nav li a').on('click', switchView);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./home":2,"./projects":4,"jquery":1}],4:[function(require,module,exports){
-"use strict";
+'use strict';
 
 module.exports = function ($) {
 	var projects = [{
-		title: "Hummingbird",
-		subtitle: "Enriching the classroom environment.",
-		img: "/img/hummingbird.jpg",
-		url: "https://github.com/velascoDev/hummingbird-dashboard"
+		title: 'Hummingbird',
+		subtitle: 'Enriching the classroom environment.',
+		img: '/img/hummingbird.jpg',
+		url: 'https://github.com/velascoDev/hummingbird-dashboard'
 	}, {
-		title: "EasyTopo",
-		subtitle: "Brain imaging simplified.",
-		img: "/img/EasyTopo.jpeg",
-		url: "https://github.com/velascoDev/EasyTopo"
+		title: 'EasyTopo',
+		subtitle: 'Brain imaging simplified.',
+		img: '/img/EasyTopo.jpeg',
+		url: 'https://github.com/velascoDev/EasyTopo'
 	}, {
-		title: "ESplay",
-		subtitle: "A sleek ES6 playground.",
-		img: "/img/esplay.jpeg",
-		url: "https://github.com/velascoDev/ESplay"
+		title: 'ESplay',
+		subtitle: 'A sleek ES6 playground.',
+		img: '/img/esplay.jpeg',
+		url: 'https://github.com/velascoDev/ESplay'
 	}, {
-		title: "SharedFi Portal",
-		subtitle: "Next-gen targeted advertising.",
-		img: "/img/pi.jpg",
-		url: "http://sharedfi.w11.wh-2.com/Master/index.html"
+		title: 'SharedFi Portal',
+		subtitle: 'Next-gen targeted advertising.',
+		img: '/img/pi.jpg',
+		url: 'http://sharedfi.w11.wh-2.com/Master/index.html'
 
 	}, {
-		title: "Portfolio",
-		subtitle: "Like it? Check out the code.",
-		img: "/img/portfolio.jpeg",
-		url: "https://github.com/velascoDev/portfolio_v2"
+		title: 'Portfolio',
+		subtitle: 'Like it? Check out the code.',
+		img: '/img/portfolio.jpeg',
+		url: 'https://github.com/velascoDev/portfolio_v2'
 	}, {
-		title: "cBioPortal",
-		subtitle: "Cancer genomics initiative at Memorial Sloan Kettering (Internship).",
-		img: "/img/zuckerman.jpg",
-		url: "https://github.com/velascoDev/cbioportal"
+		title: 'cBioPortal',
+		subtitle: 'Cancer genomics initiative at Memorial Sloan Kettering (Internship).',
+		img: '/img/zuckerman.jpg',
+		url: 'https://github.com/velascoDev/cbioportal'
 	}];
 	var scroll = function scroll(top) {
 		return function () {
@@ -10393,7 +10393,7 @@ module.exports = function ($) {
 			var subtitle = $(child).children()[1].innerHTML;
 			var img = $(child).css('background-image');
 			img = img.substring(5, img.length - 2);
-			var element = "<div class='project' style='background-image: url(" + img + ")'>\n\t\t\t<p class='project-title'> " + title + " </p>\n\t\t\t<p class='project-subtitle'> " + subtitle + " </p>\n\t\t\t<p class='project-tech'> Technologies: </p>\n\t\t\t</div>";
+			var element = '<div class=\'project\' style=\'background-image: url(' + img + ')\'>\n\t\t\t<p class=\'project-title\'> ' + title + ' </p>\n\t\t\t<p class=\'project-subtitle\'> ' + subtitle + ' </p>\n\t\t\t<p class=\'project-tech\'> Technologies: </p>\n\t\t\t</div>';
 			$('#projects').append(element);
 			idx++;
 		};
@@ -10407,7 +10407,7 @@ module.exports = function ($) {
 		for (var _iterator = projects[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion = true) {
 			var project = _step.value;
 
-			element = "<div class='project' style='background-image: url(" + project.img + ")'>\n\t\t<p class='project-title'> " + project.title + " </p>\n\t\t<p class='project-subtitle'> " + project.subtitle + " </p>\n\t\t<p class='project-tech'> Technologies: </p>\n\t\t</div>";
+			element = '<div class=\'project\' style=\'background-image: url(' + project.img + ')\'>\n\t\t<p class=\'project-title\'> ' + project.title + ' </p>\n\t\t<p class=\'project-subtitle\'> ' + project.subtitle + ' </p>\n\t\t<p class=\'project-tech\'> Technologies: </p>\n\t\t</div>';
 			$('#projects').append(element);
 		}
 	} catch (err) {
