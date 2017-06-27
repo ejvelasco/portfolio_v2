@@ -6,38 +6,43 @@ module.exports = ($) => {
 			title: 'Hummingbird',
 			subtitle: 'Enriching the classroom environment.',
 			img: '/img/hummingbird.jpg',
-			url:'https://github.com/velascoDev/hummingbird-dashboard'
+			url:'https://github.com/velascoDev/hummingbird-dashboard', 
+			tech: 'Meteor, MongoDB, Blaze.'
 		},
 		{
 			title: 'EasyTopo',
 			subtitle: 'Brain imaging simplified.',
 			img: '/img/EasyTopo.jpeg',
-			url: 'https://github.com/velascoDev/EasyTopo'
+			url: 'https://github.com/velascoDev/EasyTopo', 
+			tech: 'MATLAB, FNIRS.'
 		},
 		{
 			title: 'ESplay',
 			subtitle: 'A sleek ES6 playground.',
 			img: '/img/esplay.jpeg',
-			url: 'https://github.com/velascoDev/ESplay'
+			url: 'https://github.com/velascoDev/ESplay', 
+			tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
 		},
 		{
 			title: 'SharedFi Portal',
 			subtitle: 'Next-gen targeted advertising.',
 			img: '/img/pi.jpg',
-			url: 'http://sharedfi.w11.wh-2.com/Master/index.html'
-
+			url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
+			tech: 'MongoDB, Express, Angular, Node, Pug, Bootstrap.'
 		},
 		{
 			title: 'Portfolio',
 			subtitle: 'Like it? Check out the code.',
 			img: '/img/portfolio.jpeg',
-			url: 'https://github.com/velascoDev/portfolio_v2'
+			url: 'https://github.com/velascoDev/portfolio_v2', 
+			tech: 'Node, Express, jQuery, Pug, SASS, Bootstrap.'
 		},
 		{
 			title: 'cBioPortal',
 			subtitle: 'Cancer genomics initiative at Memorial Sloan Kettering (Internship).',
 			img: '/img/zuckerman.jpg',
-			url: 'https://github.com/velascoDev/cbioportal'
+			url: 'https://github.com/velascoDev/cbioportal', 
+			tech: 'D3.js, jQuery.'
 		}	
 	];
 	const scroll = (top) => {
@@ -53,12 +58,13 @@ module.exports = ($) => {
 			const child = $('#projects').children()[idx];
 			const title = $(child).children()[0].innerHTML;
 			const subtitle = $(child).children()[1].innerHTML;
+			const tech = $(child).children()[2].innerHTML;
 			let img = $(child).css('background-image');
 			img = img.substring(5, img.length - 2);
 			const element = `<div class='project' style='background-image: url(${img})'>
 			<p class='project-title'> ${title} </p>
 			<p class='project-subtitle'> ${subtitle} </p>
-			<p class='project-tech'> Technologies: </p>
+			<p class='project-tech'> ${tech} </p>
 			</div>`;
 			$('#projects').append(element);
 			idx++;	
@@ -69,7 +75,7 @@ module.exports = ($) => {
 		element = `<div class='project' style='background-image: url(${project.img})'>
 		<p class='project-title'> ${project.title} </p>
 		<p class='project-subtitle'> ${project.subtitle} </p>
-		<p class='project-tech'> Technologies: </p>
+		<p class='project-tech'> ${project.tech} </p>
 		</div>`;
 		$('#projects').append(element);
 	}
