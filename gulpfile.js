@@ -11,10 +11,10 @@ const sass = require('gulp-sass');
 
 gulp.task("js", function() {
     return (
-        browserify("./public/js/portfolio.js")
+        browserify("./public/js/main.js")
         .transform("babelify", {presets: ["es2015"]})
         .bundle()
-        .pipe(source("portfolio.js"))
+        .pipe(source("main.js"))
         .pipe(gulp.dest("./public/build/"))
         .pipe(livereload())
     );

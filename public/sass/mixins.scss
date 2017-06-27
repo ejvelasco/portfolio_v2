@@ -1,0 +1,12 @@
+@mixin elegant($size) { 
+	font-family: Raleway;
+	text-transform: uppercase;
+	letter-spacing: 5px;
+	font-size: $size;
+	color: white;
+}
+@mixin elegant-snippet { 
+	font-family: Raleway;
+	letter-spacing: 2px;
+	color: white;
+}

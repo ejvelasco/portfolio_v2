@@ -26,7 +26,7 @@ module.exports = ($) => {
 			$('.lead').css('letter-spacing', '-5px').css('opacity', 0);
 			setTimeout(release(idx), 700);
 			idx++;
-		}
+		};
 	}	
 	const release = (idx) => {
 		return () => {
@@ -34,7 +34,7 @@ module.exports = ($) => {
 			$('.lead').text(content[idx].desc);
 			$('.cover-heading').css('letter-spacing', '').css('opacity', '');
 			$('.lead').css('letter-spacing', '').css('opacity', '');
-		}
+		};
 	}
 	return {
 		squeeze, 

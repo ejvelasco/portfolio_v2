@@ -10300,61 +10300,35 @@ module.exports = function ($) {
 
 var $ = global.jQuery = require('jquery');
 var home = require('./home')($);
-require('./projects')($);
+var projects = require('./projects')($);
 
 var last = 'home';
 var next = '';
+var i = 1;
+var j = 0;
 var top = 0;
-// let idx = 0;
+var transition = setInterval(home.squeeze(i, home.content.length), 5000);
 var append = void 0;
 var scroll = void 0;
-var child = void 0;
-var title = void 0;
-var subtitle = void 0;
-var img = void 0;
-var first = void 0;
-var marginFirst = void 0;
-var idx = 1;
-var transition = setInterval(home.squeeze(idx, home.content.length), 5000);
-$(".masthead-nav li a").on("click", function (event) {
+
+var switchView = function switchView(event) {
 	next = event.currentTarget.innerHTML.toLowerCase();
 	if (next === last) {
 		return;
 	}
 	if (next === 'home') {
-		idx++;
-		transition = setInterval(home.squeeze(idx, home.content.length), 5000);
+		i++;
+		transition = setInterval(home.squeeze(i, home.content.length), 5000);
 	} else {
 		clearInterval(transition);
 	}
-	// if (next === 'projects') {
-	// 		scroll = setInterval(() => {
-	// 			top -= 1;
-	// 			child = $('#projects').children()[0]
-	// 			$(child).css('margin-top',top)
-	// 		}, 30)
-	//  		append = setInterval(() => {
-	// 			idx  = idx % projects.length;
-	// 			first = $('#projects').children()[0];
-	// 			marginFirst = $(first).css('margin-top');
-	// 			marginFirst = Number(marginFirst.substring(0, marginFirst.length - 2));
-	// 			child = $('#projects').children()[idx];
-	// 			title = $(child).children()[0].innerHTML;
-	// 			subtitle = $(child).children()[1].innerHTML;
-	// 			img = $(child).css('background-image');
-	// 			img = img.substring(5, img.length - 2);
-	// 			element = `<div class='project' style='background-image: url(${img})'>
-	// 			<p class='project-title'> ${title} </p>
-	// 			<p class='project-subtitle'> ${subtitle} </p>
-	// 			<p class='project-tech'> Technologies: </p>
-	// 			</div>`
-	// 			$('#projects').append(element);
-	// 			idx++;
-	// 		}, 2000);
-	// } else {
-	// 	clearInterval(scroll);
-	// 	clearInterval(append);
-	// }
+	if (next === 'projects') {
+		scroll = setInterval(projects.scroll(top), 30);
+		append = setInterval(projects.append(j, projects.projects.length), 2000);
+	} else {
+		clearInterval(scroll);
+		clearInterval(append);
+	}
 	$('#' + last).fadeOut(500, function () {
 		if (next === 'projects') {
 			$('#' + next).fadeIn(800);
@@ -10363,7 +10337,9 @@ $(".masthead-nav li a").on("click", function (event) {
 		}
 	});
 	last = next;
-});
+};
+
+$(".masthead-nav li a").on("click", switchView);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./home":2,"./projects":4,"jquery":1}],4:[function(require,module,exports){
@@ -10402,6 +10378,26 @@ module.exports = function ($) {
 		img: "/img/zuckerman.jpg",
 		url: "https://github.com/velascoDev/cbioportal"
 	}];
+	var scroll = function scroll(top) {
+		return function () {
+			var child = $('#projects').children()[0];
+			top -= 1;
+			$(child).css('margin-top', top);
+		};
+	};
+	var append = function append(idx, n) {
+		return function () {
+			idx = idx % n;
+			var child = $('#projects').children()[idx];
+			var title = $(child).children()[0].innerHTML;
+			var subtitle = $(child).children()[1].innerHTML;
+			var img = $(child).css('background-image');
+			img = img.substring(5, img.length - 2);
+			var element = "<div class='project' style='background-image: url(" + img + ")'>\n\t\t\t<p class='project-title'> " + title + " </p>\n\t\t\t<p class='project-subtitle'> " + subtitle + " </p>\n\t\t\t<p class='project-tech'> Technologies: </p>\n\t\t\t</div>";
+			$('#projects').append(element);
+			idx++;
+		};
+	};
 	var element = void 0;
 	var _iteratorNormalCompletion = true;
 	var _didIteratorError = false;
@@ -10428,6 +10424,12 @@ module.exports = function ($) {
 			}
 		}
 	}
+
+	return {
+		scroll: scroll,
+		append: append,
+		projects: projects
+	};
 };
 
 },{}]},{},[3]);

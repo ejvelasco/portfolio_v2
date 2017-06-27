@@ -1,0 +1,39 @@
+#projects {
+  background-color: transparent;
+  height: 500px;
+  overflow: hidden;
+  padding-top: 20px;
+  padding-bottom: 10px; }
+
+.project {
+  background-color: red;
+  height: 160px;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  background-size: cover !important;
+  transition: filter .4s ease-out;
+  cursor: pointer; }
+  .project:hover {
+    filter: brightness(1.7); }
+
+.project-title, .project-subtitle, .project-tech {
+  margin: 0 !important;
+  text-align: left !important; }
+
+.project-title {
+  font-family: Raleway;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.8em;
+  color: white; }
+
+.project-subtitle {
+  font-family: Raleway;
+  letter-spacing: 2px;
+  color: white; }
+
+.project-tech {
+  font-family: Raleway;
+  letter-spacing: 2px;
+  color: white; }

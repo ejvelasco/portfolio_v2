@@ -40,13 +40,42 @@ module.exports = ($) => {
 			url: "https://github.com/velascoDev/cbioportal"
 		}	
 	];
+	const scroll = (top) => {
+		return () => {
+			const child = $('#projects').children()[0];
+			top -= 1;
+			$(child).css('margin-top',top);
+		};
+	}			
+	const append = (idx, n) => {
+		return () => {
+			idx  = idx % n;
+			const child = $('#projects').children()[idx];
+			const title = $(child).children()[0].innerHTML;
+			const subtitle = $(child).children()[1].innerHTML;
+			let img = $(child).css('background-image');
+			img = img.substring(5, img.length - 2);
+			const element = `<div class='project' style='background-image: url(${img})'>
+			<p class='project-title'> ${title} </p>
+			<p class='project-subtitle'> ${subtitle} </p>
+			<p class='project-tech'> Technologies: </p>
+			</div>`;
+			$('#projects').append(element);
+			idx++;	
+		};
+	}	
 	let element;
 	for (const project of projects) {
 		element = `<div class='project' style='background-image: url(${project.img})'>
 		<p class='project-title'> ${project.title} </p>
 		<p class='project-subtitle'> ${project.subtitle} </p>
 		<p class='project-tech'> Technologies: </p>
-		</div>`
+		</div>`;
 		$('#projects').append(element);
 	}
+	return {
+		scroll, 
+		append, 
+		projects
+	};
 }
