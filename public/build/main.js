@@ -10350,14 +10350,8 @@ module.exports = function ($) {
 		title: 'Hummingbird',
 		subtitle: 'Enriching the classroom environment.',
 		img: '/img/hummingbird.jpg',
-		url: 'https://github.com/velascoDev/hummingbird-dashboard',
+		url: 'https://github.com/velascoDev/hummingbird_dashboard',
 		tech: 'Meteor, MongoDB, Blaze.'
-	}, {
-		title: 'EasyTopo',
-		subtitle: 'Brain imaging simplified.',
-		img: '/img/EasyTopo.jpeg',
-		url: 'https://github.com/velascoDev/EasyTopo',
-		tech: 'MATLAB, FNIRS.'
 	}, {
 		title: 'ESplay',
 		subtitle: 'A sleek ES6 playground.',
@@ -10365,8 +10359,14 @@ module.exports = function ($) {
 		url: 'https://github.com/velascoDev/ESplay',
 		tech: 'Angular, Babel, Node, Express, Pug, Bootstrap.'
 	}, {
-		title: 'SharedFi Portal',
-		subtitle: 'Next-gen targeted advertising.',
+		title: 'SharedFi - Sofía',
+		subtitle: 'A friendly Shopping Assistant soon to be launched in select Mexican retailers (Private).',
+		img: '/img/sofia.jpeg',
+		url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
+		tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'
+	}, {
+		title: 'SharedFi - Portal',
+		subtitle: 'Next-gen targeted advertising. (Private)',
 		img: '/img/pi.jpg',
 		url: 'http://sharedfi.w11.wh-2.com/Master/index.html',
 		tech: 'MongoDB, Express, Angular, Node, Pug, Bootstrap.'
@@ -10382,6 +10382,12 @@ module.exports = function ($) {
 		img: '/img/zuckerman.jpg',
 		url: 'https://github.com/velascoDev/cbioportal',
 		tech: 'D3.js, jQuery.'
+	}, {
+		title: 'EasyTopo',
+		subtitle: 'Brain imaging simplified.',
+		img: '/img/EasyTopo.jpeg',
+		url: 'https://github.com/velascoDev/EasyTopo',
+		tech: 'MATLAB, FNIRS.'
 	}];
 	var scroll = function scroll(top) {
 		return function () {
