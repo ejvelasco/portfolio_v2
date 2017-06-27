@@ -147,11 +147,15 @@ body {
   padding: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
-  background-size: cover !important; }
+  background-size: cover !important;
+  transition: filter .4s ease-out;
+  cursor: pointer; }
+  .project:hover {
+    filter: brightness(1.7); }
 
-.project-title, .project-subtitle {
+.project-title, .project-subtitle, .project-tech {
   margin: 0 !important;
-  text-align: left; }
+  text-align: left !important; }
 
 .project-title {
   font-family: Raleway;
@@ -161,6 +165,11 @@ body {
   color: white; }
 
 .project-subtitle {
+  font-family: Raleway;
+  letter-spacing: 2px;
+  color: white; }
+
+.project-tech {
   font-family: Raleway;
   letter-spacing: 2px;
   color: white; }

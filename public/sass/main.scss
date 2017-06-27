@@ -174,16 +174,24 @@ body {
   margin-bottom: 20px;
   border-radius: 5px;
   background-size: cover !important;
+  transition: filter .4s ease-out;
+  cursor: pointer;
+  &:hover {
+    filter: brightness(1.7);
+  }
 }
-.project-title,.project-subtitle{
+.project-title,.project-subtitle, .project-tech {
   margin: 0 !important;
-  text-align: left;
+  text-align: left !important;
 }
 .project-title {
   @include elegant(1.8em);
 }
 .project-subtitle {
   @include elegant-snippet;
+}
+.project-tech {
+  @include elegant-snippet; 
 }
 @media (max-width: 768px) {
   .cover-heading {
