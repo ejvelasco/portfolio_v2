@@ -35,7 +35,7 @@ const switchView = (event) => {
 	}
 	$(`#${last}`).fadeOut(500, () => {
 		if (next === 'projects') {
-			$(`#${next}`).fadeIn(800);	
+			$(`#${next}`).fadeIn(1000);	
 		} else {
 			$(`#${next}`).fadeIn(500);	
 		}
