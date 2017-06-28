@@ -4,6 +4,7 @@
 @import 'mixins';
 @import 'nav';
 @import 'projects';
+@import 'about';
 //main 
 html {
 	height: 100%;
@@ -29,7 +30,7 @@ body {
 	background-size: cover;
 	background-position: center;
 	z-index: -1;
-	filter: hue-rotate(180deg);
+	filter: hue-rotate(180deg) brightness(.9);
 }
 .site-wrapper-inner {
 	display: table-cell;
@@ -76,6 +77,19 @@ body {
 	.project {
 		margin-bottom: 30px !important;
 	}
+	.about {
+		font-size: 1.8em;
+	}
+	.about-info {
+		margin-top: 15px;
+		width: 90%;
+		text-align: left;
+		font-size: 1em !important;
+	}
+	.project-title, .project-subtitle, .project-tech {
+		font-size: .9em !important;
+	}
+
 }
 @media (min-height: 750px) {
 	#projects {

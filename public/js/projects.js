@@ -18,7 +18,7 @@ module.exports = ($) => {
 		},
 		{
 			title: 'SharedFi - Sofía',
-			subtitle: 'A friendly Shopping Assistant soon to be launched in select Mexican retailers (Private).',
+			subtitle: 'A friendly Shopping Assistant (Private).',
 			img: '/img/sofia.jpeg',
 			url: 'http://sharedfi.w11.wh-2.com/Master/index.html', 
 			tech: 'Python, Tensorflow, WebSockets, Node, Angular, Bootstrap'

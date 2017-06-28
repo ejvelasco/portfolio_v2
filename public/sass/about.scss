@@ -1,0 +1,19 @@
+@import 'mixins';
+
+.about {
+	@include elegant(3em);
+	letter-spacing: 6px !important;
+	text-align: left;
+	margin-left: 12%;
+}
+.about-info {
+	@include elegant-snippet;
+	font-size: 1.6em !important;
+	font-weight: lighter;
+	width: 80%;
+	display: block; 
+	margin: 0 auto;
+	margin-top: 35px;
+	margin-bottom: 10px;
+	text-align: justify;
+}
