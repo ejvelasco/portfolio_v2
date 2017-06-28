@@ -64,7 +64,7 @@
   margin-bottom: 10px;
   border-radius: 5px;
   background-size: cover !important;
-  transition: filter .4s ease-out;
+  transition: filter .3s ease-in;
   cursor: pointer; }
   .project:hover {
     filter: brightness(1.7); }
@@ -108,7 +108,7 @@
   color: white;
   letter-spacing: 6px !important;
   text-align: left;
-  margin-left: 12%; }
+  margin-left: 10%; }
 
 .about-info {
   font-family: Raleway;
@@ -133,6 +133,54 @@
 
 .bounce {
   animation: bounce 2s infinite; }
+
+input, textarea {
+  display: block;
+  margin: 0 auto;
+  width: 60%;
+  outline: none;
+  padding-top: 20px;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  font-size: 1.5em;
+  font-family: 'Helvetica';
+  background-color: transparent; }
+
+textarea {
+  padding-top: 10px;
+  margin-top: 30px;
+  border: solid 1px white; }
+
+input {
+  border: none;
+  border-bottom: solid 1px white;
+  color: white; }
+
+.send {
+  font-family: Raleway;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1em;
+  color: white;
+  border: solid 1px white;
+  padding: 12px;
+  width: 15%;
+  min-width: 120px;
+  margin: 0 auto;
+  margin-top: 30px;
+  cursor: pointer;
+  transition: all .3s ease-in; }
+  .send:hover {
+    background-color: rgba(255, 255, 255, 0.3); }
+
+::-webkit-input-placeholder {
+  color: rgba(255, 255, 255, 0.8); }
+
+::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.8); }
+
+:-ms-input-placeholder {
+  color: rgba(255, 255, 255, 0.8); }
 
 html {
   height: 100%;

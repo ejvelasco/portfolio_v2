@@ -9,8 +9,8 @@ module.exports = ($) => {
 		}, 
 		{
 			title:'GETTING TECHNICAL',
-			first:'I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with Meteor, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Jest. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.',
-			second:'I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.'
+			first:'I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps based on Meteor, Angular, and React. I am comfortable implementing robust unit tests with frameworks like Mocha or Jest. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.',
+			second:'I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js.\nLately, I\'ve been focused on learning Python! It\'s simple, powerful, and boasts awesome Machine Learning libraries like Tensorflow.'
 		}
 	];
 	let idx = 1;
