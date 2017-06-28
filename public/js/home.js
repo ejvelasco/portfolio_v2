@@ -36,6 +36,14 @@ module.exports = ($) => {
 			$('.lead').css('letter-spacing', '').css('opacity', '');
 		};
 	}
+	const $div = $(".bg");
+	const bg = $div.css("background-image");
+	const src = bg.replace(/(^url\()|(\)$|[\"\"])/g, "");
+	const $img = $("<img>").attr("src", src).on("load", () => {
+		let deg = 0;
+	    $div.fadeIn(1200);
+	    $(".cover-container").fadeIn(1200);
+	 });
 	return {
 		squeeze, 
 		release, 

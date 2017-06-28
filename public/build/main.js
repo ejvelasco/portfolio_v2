@@ -10314,6 +10314,7 @@ module.exports = function ($) {
 			res.json().then(function (data) {
 				if (data.error) {
 					showError(data.error);
+					$('#send').text('send');
 				} else {
 					$('#send').text('sent').css('background-color', 'rgba(0, 255, 155, .2)');
 					setTimeout(function () {
@@ -10326,6 +10327,7 @@ module.exports = function ($) {
 			});
 		}).catch(function (err) {
 			showError('There was an error connecting to the server.');
+			$('#send').text('send');
 		});
 	};
 	$('#send').click(send);
@@ -10365,6 +10367,14 @@ module.exports = function ($) {
 			$('.lead').css('letter-spacing', '').css('opacity', '');
 		};
 	};
+	var $div = $(".bg");
+	var bg = $div.css("background-image");
+	var src = bg.replace(/(^url\()|(\)$|[\"\"])/g, "");
+	var $img = $("<img>").attr("src", src).on("load", function () {
+		var deg = 0;
+		$div.fadeIn(1200);
+		$(".cover-container").fadeIn(1200);
+	});
 	return {
 		squeeze: squeeze,
 		release: release,

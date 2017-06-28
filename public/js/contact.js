@@ -4,7 +4,7 @@ module.exports = ($) => {
 	const showError = (item) => {
 		$('.error').text(`Please enter a valid ${item}.`).fadeIn(500, () => {
 			setTimeout(() => {
-				$('.error').fadeOut(500)
+				$('.error').fadeOut(500);
 			}, 3000);
 		});
 	}
@@ -31,6 +31,7 @@ module.exports = ($) => {
 			res.json().then(data => {
 				if (data.error) {
 					showError(data.error);
+					$('#send').text('send');
 				} else {
 					$('#send').text('sent').css('background-color', 'rgba(0, 255, 155, .2)');
 					setTimeout(() => {
@@ -43,6 +44,7 @@ module.exports = ($) => {
 			});
 		}).catch(err => {
 			showError('There was an error connecting to the server.');
+			$('#send').text('send');
 		});
 	}
 	$('#send').click(send);

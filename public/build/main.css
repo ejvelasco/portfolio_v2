@@ -222,6 +222,7 @@ body {
   background-size: cover;
   background-position: center;
   z-index: -1;
+  display: none;
   filter: hue-rotate(180deg) brightness(0.9); }
 
 .site-wrapper-inner {
@@ -230,7 +231,8 @@ body {
 
 .cover-container {
   margin-right: auto;
-  margin-left: auto; }
+  margin-left: auto;
+  display: none; }
 
 .cover-heading {
   font-family: "Raleway";
@@ -278,7 +280,7 @@ body {
     text-align: left;
     font-size: 1em !important; }
   .error {
-    width: 97%; }
+    width: 85%; }
   .arrow {
     padding-left: 0; }
   input, textarea, #send {
