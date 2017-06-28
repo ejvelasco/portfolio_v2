@@ -14,7 +14,7 @@ module.exports = ($) => {
 			subtitle: 'A concise TCP project.',
 			img: '/img/client.jpeg',
 			url: 'https://github.com/velascoDev/tcp_client', 
-			tech: 'NodeJS, ES6.'
+			tech: 'Node, ES6.'
 		},
 		{
 			title: 'ESplay',

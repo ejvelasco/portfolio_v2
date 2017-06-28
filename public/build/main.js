@@ -10385,7 +10385,7 @@ module.exports = function ($) {
 		subtitle: 'A concise TCP project.',
 		img: '/img/client.jpeg',
 		url: 'https://github.com/velascoDev/tcp_client',
-		tech: 'NodeJS, ES6.'
+		tech: 'Node, ES6.'
 	}, {
 		title: 'ESplay',
 		subtitle: 'A sleek ES6 playground.',
