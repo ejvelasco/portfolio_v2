@@ -10255,6 +10255,33 @@ return jQuery;
 
 },{}],2:[function(require,module,exports){
 'use strict';
+'use-strict';
+
+module.exports = function ($) {
+	var about = [{
+		title: 'ABOUT ME',
+		first: 'I\'m a twenty-three year old programmer living in Austin, Texas. I developed a passion for programming in high school, and I have come a long way since. I embrace new opportunities to learn independently, and I am all about a hands-on approach to development.',
+		second: 'Don\'t let my portfolio fool you into thinking I\'m only about coding! It is my interest in Mathematics that gives rise to my interest in the theoretical aspect of CS. I like to take an analytical approach when solving programming problems. When I\'m away from the keyboard, I like to stay fit, read anything from non-fiction to high fantasy, and play chess.'
+	}, {
+		title: 'GETTING TECHNICAL',
+		first: 'I aim to develop applications that are scalable, reliable, and mantainable. I like to work with Node and the rich ecosystem of libraries that the NPM offers. I have built apps with Meteor, as well as the classic Express. I am comfortable implementing robust unit tests with Mocha and Jest. To use, or not to use a relational data model? No problem! I feel confident working with either MongoDB or MySQL.',
+		second: 'I strive to implement applications that look and feel great across devices. Anytime design is involved, I let my creativity run free to create elegant interfaces that feature a smooth user experience. When it comes to data visualization, I like to use D3.js or Chart.js. I usually let Angular do the power lifting, but I am currently having fun learning React. In the end, frameworks are sweet, but sometimes pure JS is the way to go.'
+	}];
+	var idx = 1;
+	$('.arrow').on('click', function () {
+		idx = idx % 2;
+		$('#about').fadeOut(600, function () {
+			$($('#about').children()[1]).text(about[idx].first);
+			$($('#about').children()[2]).text(about[idx].second);
+			$('#about').fadeIn(600);
+			idx++;
+		});
+		$('.arrow').removeClass('bounce');
+	});
+};
+
+},{}],3:[function(require,module,exports){
+'use strict';
 
 module.exports = function ($) {
 	var content = [{
@@ -10294,13 +10321,14 @@ module.exports = function ($) {
 	};
 };
 
-},{}],3:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 (function (global){
 'use strict';
 
 var $ = global.jQuery = require('jquery');
 var home = require('./home')($);
 var projects = require('./projects')($);
+var about = require('./about')($);
 
 var last = 'home';
 var next = '';
@@ -10342,7 +10370,7 @@ var switchView = function switchView(event) {
 $('.masthead-nav li a').on('click', switchView);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./home":2,"./projects":4,"jquery":1}],4:[function(require,module,exports){
+},{"./about":2,"./home":3,"./projects":5,"jquery":1}],5:[function(require,module,exports){
 'use strict';
 
 module.exports = function ($) {
@@ -10475,4 +10503,4 @@ module.exports = function ($) {
 	};
 };
 
-},{}]},{},[3]);
+},{}]},{},[4]);
