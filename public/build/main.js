@@ -10381,6 +10381,12 @@ module.exports = function ($) {
 		url: 'https://github.com/velascoDev/hummingbird_dashboard',
 		tech: 'Meteor, MongoDB, Blaze.'
 	}, {
+		title: 'TCP Fun',
+		subtitle: 'A concise TCP project.',
+		img: '/img/client.jpeg',
+		url: 'https://github.com/velascoDev/tcp_client',
+		tech: 'NodeJS, ES6.'
+	}, {
 		title: 'ESplay',
 		subtitle: 'A sleek ES6 playground.',
 		img: '/img/esplay.jpeg',
