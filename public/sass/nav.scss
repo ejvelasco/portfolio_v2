@@ -42,6 +42,7 @@
 	line-height: 58px !important;
 	padding-top: 0 !important;
 	padding-bottom: 0 !important;
+	user-select: none;
 	&:hover {
 		background-color: transparent !important;
 		color: rgba(255, 255, 255, .6);  

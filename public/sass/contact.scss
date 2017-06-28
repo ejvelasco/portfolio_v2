@@ -22,7 +22,20 @@ input {
 	border-bottom: solid 1px white;
 	color: white;
 }
-.send {
+.error {
+	opacity: .5;
+	width: 35%;
+	border-top: solid 1px white;
+	border-bottom: solid 1px white;
+	padding: 5px;
+	margin: 0 auto;
+	display: none;
+	right: 0; 
+	left: 0;
+	position: absolute;
+	margin-top: 10px;
+}
+#send {
 	@include elegant(1em);
 	border: solid 1px white;
 	padding: 12px;
@@ -30,10 +43,10 @@ input {
 	min-width: 120px;
 	margin: 0 auto;
 	margin-top: 30px;
-	margin-bottom: 30px !important;
 	cursor: pointer;
 	transition: all .3s ease-in;
 	user-select: none;
+	transition: all .3s ease-in;
 	&:hover {
 		background-color: rgba(255, 255, 255, .3);
 	}

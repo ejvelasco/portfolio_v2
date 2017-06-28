@@ -10270,7 +10270,7 @@ module.exports = function ($) {
 	var idx = 1;
 	$('.arrow').on('click', function () {
 		idx = idx % 2;
-		$('#about').fadeOut(600, function () {
+		$('#about').stop().fadeOut(600, function () {
 			$($('#about').children()[1]).text(about[idx].first);
 			$($('#about').children()[2]).text(about[idx].second);
 			$('#about').fadeIn(600);
@@ -10281,6 +10281,57 @@ module.exports = function ($) {
 };
 
 },{}],3:[function(require,module,exports){
+'use strict';
+
+module.exports = function ($) {
+	var showError = function showError(item) {
+		$('.error').text('Please enter a valid ' + item + '.').fadeIn(500, function () {
+			setTimeout(function () {
+				$('.error').fadeOut(500);
+			}, 3000);
+		});
+	};
+	var send = function send() {
+		var details = {
+			name: $('#name').val(),
+			email: $('#email').val(),
+			message: $('#msg').val()
+		};
+		for (var detail in details) {
+			if (details[detail] === '') {
+				showError(detail);
+				return;
+			}
+		}
+		$('#send').text('sending...');
+		fetch('/send', {
+			method: 'post',
+			headers: {
+				"Content-type": "application/json"
+			},
+			body: JSON.stringify(details)
+		}).then(function (res) {
+			res.json().then(function (data) {
+				if (data.error) {
+					showError(data.error);
+				} else {
+					$('#send').text('sent').css('background-color', 'rgba(0, 255, 155, .2)');
+					setTimeout(function () {
+						$('#name').val('');
+						$('#email').val('');
+						$('#msg').val('');
+						$('#send').text('send').css('background-color', '');
+					}, 4000);
+				}
+			});
+		}).catch(function (err) {
+			showError('There was an error connecting to the server.');
+		});
+	};
+	$('#send').click(send);
+};
+
+},{}],4:[function(require,module,exports){
 'use strict';
 
 module.exports = function ($) {
@@ -10321,14 +10372,15 @@ module.exports = function ($) {
 	};
 };
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 (function (global){
 'use strict';
 
 var $ = global.jQuery = require('jquery');
 var home = require('./home')($);
 var projects = require('./projects')($);
-var about = require('./about')($);
+require('./about')($);
+require('./contact')($);
 
 var last = 'home';
 var next = '';
@@ -10370,7 +10422,7 @@ var switchView = function switchView(event) {
 $('.masthead-nav li a').on('click', switchView);
 
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./about":2,"./home":3,"./projects":5,"jquery":1}],5:[function(require,module,exports){
+},{"./about":2,"./contact":3,"./home":4,"./projects":6,"jquery":1}],6:[function(require,module,exports){
 'use strict';
 
 module.exports = function ($) {
@@ -10509,4 +10561,4 @@ module.exports = function ($) {
 	};
 };
 
-},{}]},{},[4]);
+},{}]},{},[5]);

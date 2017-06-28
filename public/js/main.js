@@ -3,7 +3,8 @@
 const $ = global.jQuery = require('jquery');
 const home = require('./home')($);
 const projects = require('./projects')($);
-const about = require('./about')($);
+require('./about')($);
+require('./contact')($);
 
 let last  = 'home';
 let next = '';

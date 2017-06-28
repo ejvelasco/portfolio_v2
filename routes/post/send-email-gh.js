@@ -1,7 +1,7 @@
 "use strict";
 
 module.exports = (app, nodemailer) => {
-	app.post("/send-email", (req, res) => {
+	app.post("/send", (req, res) => {
 	    const details = req.body;
 	    const re = {
 	    	name: /^[a-zA-Z ]+$/,

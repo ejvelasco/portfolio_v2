@@ -89,7 +89,13 @@ body {
 		text-align: left;
 		font-size: 1em !important;
 	}
-	input, textarea, .send {
+	.error {
+		width: 97%;
+	}
+	.arrow {
+		padding-left: 0;
+	}
+	input, textarea, #send {
 		width: 97%;
 		font-size: 1.1em;
 	}

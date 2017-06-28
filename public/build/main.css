@@ -43,7 +43,8 @@
   cursor: pointer;
   line-height: 58px !important;
   padding-top: 0 !important;
-  padding-bottom: 0 !important; }
+  padding-bottom: 0 !important;
+  user-select: none; }
   .masthead-nav li a:hover {
     background-color: transparent !important;
     color: rgba(255, 255, 255, 0.6); }
@@ -156,7 +157,20 @@ input {
   border-bottom: solid 1px white;
   color: white; }
 
-.send {
+.error {
+  opacity: .5;
+  width: 35%;
+  border-top: solid 1px white;
+  border-bottom: solid 1px white;
+  padding: 5px;
+  margin: 0 auto;
+  display: none;
+  right: 0;
+  left: 0;
+  position: absolute;
+  margin-top: 10px; }
+
+#send {
   font-family: Raleway;
   text-transform: uppercase;
   letter-spacing: 5px;
@@ -168,11 +182,11 @@ input {
   min-width: 120px;
   margin: 0 auto;
   margin-top: 30px;
-  margin-bottom: 30px !important;
   cursor: pointer;
   transition: all .3s ease-in;
-  user-select: none; }
-  .send:hover {
+  user-select: none;
+  transition: all .3s ease-in; }
+  #send:hover {
     background-color: rgba(255, 255, 255, 0.3); }
 
 ::-webkit-input-placeholder {
@@ -263,7 +277,11 @@ body {
     width: 97%;
     text-align: left;
     font-size: 1em !important; }
-  input, textarea, .send {
+  .error {
+    width: 97%; }
+  .arrow {
+    padding-left: 0; }
+  input, textarea, #send {
     width: 97%;
     font-size: 1.1em; }
   .project-title, .project-subtitle, .project-tech {

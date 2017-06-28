@@ -16,7 +16,7 @@ module.exports = ($) => {
 	let idx = 1;
 	$('.arrow').on('click', () => {
 		idx = idx % 2;
-		$('#about').fadeOut(600, () => {
+		$('#about').stop().fadeOut(600, () => {
 			$($('#about').children()[1]).text(about[idx].first);
 			$($('#about').children()[2]).text(about[idx].second);
 			$('#about').fadeIn(600);
