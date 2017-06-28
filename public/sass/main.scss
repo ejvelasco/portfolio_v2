@@ -80,12 +80,18 @@ body {
 	}
 	.about {
 		font-size: 1.8em;
+		text-align: center;
+		margin-left: 0;
 	}
 	.about-info {
 		margin-top: 15px;
-		width: 90%;
+		width: 97%;
 		text-align: left;
 		font-size: 1em !important;
+	}
+	input, textarea, .send {
+		width: 97%;
+		font-size: 1.1em;
 	}
 	.project-title, .project-subtitle, .project-tech {
 		font-size: .9em !important;
