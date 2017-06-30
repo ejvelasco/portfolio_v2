@@ -10291,6 +10291,24 @@ module.exports = function ($) {
 			}, 3000);
 		});
 	};
+	var reset = function reset(data) {
+		if (data.error) {
+			showError(data.error);
+			$('#send').text('send');
+		} else {
+			$('#send').text('sent').css('background-color', 'rgba(0, 255, 155, .2)');
+			setTimeout(function () {
+				$('#name').val('');
+				$('#email').val('');
+				$('#msg').val('');
+				$('#send').text('send').css('background-color', '');
+			}, 4000);
+		}
+	};
+	var error = function error() {
+		showError('There was an error connecting to the server.');
+		$('#send').text('send');
+	};
 	var send = function send() {
 		var details = {
 			name: $('#name').val(),
@@ -10304,30 +10322,13 @@ module.exports = function ($) {
 			}
 		}
 		$('#send').text('sending...');
-		fetch('/send', {
-			method: 'post',
-			headers: {
-				"Content-type": "application/json"
-			},
-			body: JSON.stringify(details)
-		}).then(function (res) {
-			res.json().then(function (data) {
-				if (data.error) {
-					showError(data.error);
-					$('#send').text('send');
-				} else {
-					$('#send').text('sent').css('background-color', 'rgba(0, 255, 155, .2)');
-					setTimeout(function () {
-						$('#name').val('');
-						$('#email').val('');
-						$('#msg').val('');
-						$('#send').text('send').css('background-color', '');
-					}, 4000);
-				}
-			});
-		}).catch(function (err) {
-			showError('There was an error connecting to the server.');
-			$('#send').text('send');
+		$.ajax({
+			url: '/send',
+			type: 'POST',
+			contentType: 'application/json',
+			success: reset,
+			error: error,
+			data: JSON.stringify(details)
 		});
 	};
 	$('#send').click(send);
